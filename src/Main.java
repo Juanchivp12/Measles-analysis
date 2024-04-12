@@ -1,4 +1,5 @@
 import java.io.*;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main
@@ -38,7 +39,6 @@ public class Main
     /**
      * This method reads through any of the 3 reading frames
      * @param fileName a String representing a reading frame
-     * @throws IOException
      */
     public static void fileReader(String fileName) throws IOException
     {
@@ -66,8 +66,16 @@ public class Main
             else if (choice == specificAminoAcid)
             {
                 System.out.println("What amino acid are you looking for? (Enter a letter) ");
-                int aminoChoice = kbd.nextInt();
-                AminoAcid aminoAcid = new AminoAcid();
+                String aminoChoice = kbd.nextLine();
+                if (aminoChoice.equalsIgnoreCase("A"))
+                {
+                    ArrayList<String> codonsA = new ArrayList<String>();
+                    codonsA.add("GCT");
+                    codonsA.add("GCC");
+                    codonsA.add("GCA");
+                    codonsA.add("GCG");
+                    AminoAcid AminoAcidA = new AminoAcid("Alanine", "Ala", codonsA);
+                }
             }
         }
         inFile.close();
