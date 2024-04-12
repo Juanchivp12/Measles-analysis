@@ -1,6 +1,5 @@
 import java.io.*;
 import java.util.Scanner;
-import java.util.ArrayList;
 
 public class Main
   {
@@ -43,6 +42,10 @@ public class Main
      */
     public static void fileReader(String fileName) throws IOException
     {
+        int wholeRF = 1;
+        int specificAminoAcid = 2;
+        Scanner kbd = new Scanner(System.in);
+
         File file = new File(fileName);
         Scanner inFile = new Scanner(file);
 
@@ -50,6 +53,22 @@ public class Main
         {
             String str = inFile.nextLine();
             String[] tokens = str.split(",");
+
+            System.out.print("Want to see the whole RF or only a specific amino acid? (1, 2) ");
+            int choice = kbd.nextInt();
+            if (choice == wholeRF)
+            {
+                for (String s : tokens)
+                {
+                    System.out.print(s + " ");
+                }
+            }
+            else if (choice == specificAminoAcid)
+            {
+                System.out.println("What amino acid are you looking for? (Enter a letter) ");
+                int aminoChoice = kbd.nextInt();
+                AminoAcid aminoAcid = new AminoAcid();
+            }
         }
         inFile.close();
     }
