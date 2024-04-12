@@ -27,6 +27,35 @@ public class Main
         
         case RF3: fileReader("measlesSequenceRF3.csv"); break;
       }
+      System.out.println(buildAcidList());
+    }
+
+    /**
+     * This method makes an array list of amino acids
+     * @return the array list of amino acids
+     * @throws IOException
+     */
+    public static void buildAcidList() throws IOException
+    {
+        initializeAminoAcids();
+        File file = new File("aminoAcidTable.csv");
+        Scanner inFile = new Scanner(file);
+        inFile.nextLine();
+
+        ArrayList<AminoAcid> acidList = new ArrayList<AminoAcid>();
+
+        while (inFile.hasNext())
+        {
+            String str = inFile.nextLine();
+            String[] tokens = str.split(",");
+
+            for (String s : tokens)
+            {
+                acidList.add(s);
+            }
+        }
+        inFile.close();
+
     }
 
       // Initialize all the amino acids
@@ -167,7 +196,6 @@ public class Main
     public static void fileReader(String fileName) throws IOException
     {
         initializeAminoAcids();
-        System.out.println(aminoAcidsA);
 
         int wholeRF = 1;
         int aminoAcid = 2;
@@ -190,7 +218,7 @@ public class Main
                     System.out.print(s + " ");
                 }
             }
-            else if (choice == aminoAcid)
+            else
             {
                 System.out.println("What amino acid are you looking for? (Enter a letter) ");
                 String aminoChoice = kbd.next().toUpperCase();

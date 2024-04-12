@@ -5,7 +5,7 @@ public class AminoAcid
     // ATTRIBUTES
     private String fullName = " ";
     private String abbreviation = " ";
-    private ArrayList<String> codons = new ArrayList<String>();
+    private static ArrayList<String> codons = new ArrayList<String>();
 
     // CONSTRUCTORS
     public AminoAcid() {}
