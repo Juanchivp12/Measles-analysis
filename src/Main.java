@@ -1,5 +1,6 @@
 import java.io.*;
 import java.util.Scanner;
+import java.util.ArrayList;
 
 public class Main
   {
@@ -49,11 +50,6 @@ public class Main
         {
             String str = inFile.nextLine();
             String[] tokens = str.split(",");
-
-            for (String s : tokens)
-            {
-                System.out.print(s + " ");
-            }
         }
         inFile.close();
     }
