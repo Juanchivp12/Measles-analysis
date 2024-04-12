@@ -44,7 +44,7 @@ public class AminoAcid
         return abbreviation;
     }
 
-    public ArrayList<String> getCodons()
+    public static ArrayList<String> getCodons()
     {
         return codons;
     }
@@ -66,4 +66,6 @@ public class AminoAcid
     {
         return new AminoAcid(fullName, abbreviation, codons);
     }
+
+
 }
