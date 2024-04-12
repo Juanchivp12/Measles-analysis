@@ -30,7 +30,7 @@ public class Main
     }
 
       // Initialize all the amino acids
-      public void initializeAminoAcids()
+      public static void initializeAminoAcids()
       {
           ArrayList<String> codonsA = new ArrayList<String>();
           codonsA.add("GCT");
@@ -166,6 +166,9 @@ public class Main
      */
     public static void fileReader(String fileName) throws IOException
     {
+        initializeAminoAcids();
+        System.out.println(aminoAcidsA);
+
         int wholeRF = 1;
         int aminoAcid = 2;
         Scanner kbd = new Scanner(System.in);
