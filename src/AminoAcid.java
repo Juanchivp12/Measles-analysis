@@ -4,16 +4,18 @@ public class AminoAcid
 {
     // ATTRIBUTES
     private String fullName = " ";
-    private String abbreviation = " ";
+    private String threeLetterAbbreviation = " ";
+    private String oneLetterAbbreviation = "";
     private static ArrayList<String> codons = new ArrayList<String>();
 
     // CONSTRUCTORS
     public AminoAcid() {}
 
-    public AminoAcid(String fullName, String abbreviation, ArrayList<String> codons)
+    public AminoAcid(String fullName, String threeLetterAbbreviation, String oneLetterAbbreviation, ArrayList<String> codons)
     {
         this.fullName = fullName;
-        this.abbreviation = abbreviation;
+        this.threeLetterAbbreviation = threeLetterAbbreviation;
+        this.oneLetterAbbreviation = oneLetterAbbreviation;
         this.codons = codons;
     }
 
@@ -23,9 +25,14 @@ public class AminoAcid
         this.fullName = fullName;
     }
 
-    public void setAbbreviation(String abbreviation)
+    public void setThreeLetterAbbreviation(String threeLetterAbbreviation)
     {
-        this.abbreviation = abbreviation;
+        this.threeLetterAbbreviation = threeLetterAbbreviation;
+    }
+
+    public void setOneLetterAbbreviation(String threeLetterAbbreviation)
+    {
+        this.oneLetterAbbreviation = oneLetterAbbreviation;
     }
 
     public void setCodons(ArrayList<String> codons)
@@ -39,9 +46,14 @@ public class AminoAcid
         return fullName;
     }
 
-    public String getAbbreviation()
+    public String getThreeLetterAbbreviation()
     {
-        return abbreviation;
+        return threeLetterAbbreviation;
+    }
+
+    public String getOneLetterAbbreviation()
+    {
+        return oneLetterAbbreviation;
     }
 
     public static ArrayList<String> getCodons()
@@ -58,13 +70,14 @@ public class AminoAcid
     public boolean equals(AminoAcid aminoAcidTest)
     {
         return this.fullName == aminoAcidTest.fullName
-                && this.abbreviation == aminoAcidTest.abbreviation
+                && this.threeLetterAbbreviation == aminoAcidTest.threeLetterAbbreviation
+                && this.oneLetterAbbreviation == aminoAcidTest.oneLetterAbbreviation
                 && this.codons == aminoAcidTest.codons;
     }
 
     public AminoAcid clone()
     {
-        return new AminoAcid(fullName, abbreviation, codons);
+        return new AminoAcid(fullName, threeLetterAbbreviation, oneLetterAbbreviation, codons);
     }
 
 

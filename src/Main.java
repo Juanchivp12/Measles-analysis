@@ -13,6 +13,8 @@ public class Main
       int fileChoice;
       Scanner kbd = new Scanner(System.in);
 
+      ArrayList<AminoAcid> aminoAcidList = readFromAminoAcidTable("aminoAcidTable.csv");
+
       do
       {
         System.out.print("Which RF file would you like to scan? (1, 2, 3) ");
@@ -27,7 +29,6 @@ public class Main
         
         case RF3: fileReader("measlesSequenceRF3.csv"); break;
       }
-      buildAcidList();
     }
 
     /**
@@ -35,10 +36,9 @@ public class Main
      * @return the array list of amino acids
      * @throws IOException
      */
-    public static void buildAcidList() throws IOException
+    public static ArrayList<AminoAcid> readFromAminoAcidTable(String filename) throws IOException
     {
-        initializeAminoAcids();
-        File file = new File("aminoAcidTable.csv");
+        File file = new File(filename);
         Scanner inFile = new Scanner(file);
         inFile.nextLine();
 
@@ -49,13 +49,25 @@ public class Main
             String str = inFile.nextLine();
             String[] tokens = str.split(",");
 
-            for (String s : tokens)
+            // Assign variables the values of tokens at specific positions
+            String name = tokens[0];
+            String threeLetter = tokens[1];
+            String oneLetter = tokens[2];
+
+            // Make array list for codons and read them from file and add them to it
+            ArrayList<String> codons = new ArrayList<String>();
+            for (int i = 3; i < tokens.length; i++)
             {
-                System.out.print(s + " ");
+                codons.add(tokens[i]);
             }
-            System.out.println();
+
+            // Make an instance of the AminoAcid class and add information from aminoAcidTable file
+            AminoAcid acid = new AminoAcid(name, threeLetter, oneLetter, codons);
+            acidList.add(acid);
         }
         inFile.close();
+
+        return acidList;
 
     }
 
