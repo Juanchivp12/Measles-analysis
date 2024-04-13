@@ -29,10 +29,19 @@ public class Main
         
         case RF3: fileReader("measlesSequenceRF3.csv"); break;
       }
+
+      for (AminoAcid amino : aminoAcidList)
+      {
+        System.out.print(amino.getFullName() + " ");
+        System.out.print(amino.getThreeLetterAbbreviation() + " ");
+        System.out.print(amino.getOneLetterAbbreviation() + " ");
+        System.out.print(amino.getCodons() + " ");
+        System.out.println();
+      }
     }
 
     /**
-     * This method makes an array list of amino acids
+     * This method makes an array of AminoAcids using the aminoAcidTable file
      * @return the array list of amino acids
      * @throws IOException
      */
@@ -40,12 +49,15 @@ public class Main
     {
         File file = new File(filename);
         Scanner inFile = new Scanner(file);
+
+        // Skip first line of the file
         inFile.nextLine();
 
         ArrayList<AminoAcid> acidList = new ArrayList<AminoAcid>();
 
         while (inFile.hasNext())
         {
+            // Read items from file and extract tokens
             String str = inFile.nextLine();
             String[] tokens = str.split(",");
 
@@ -68,139 +80,7 @@ public class Main
         inFile.close();
 
         return acidList;
-
     }
-
-      // Initialize all the amino acids
-      public static void initializeAminoAcids()
-      {
-          ArrayList<String> codonsA = new ArrayList<String>();
-          codonsA.add("GCT");
-          codonsA.add("GCC");
-          codonsA.add("GCA");
-          codonsA.add("GCG");
-          SpecificAminoAcid aminoAcidA = new SpecificAminoAcid("Alanine", "Ala", codonsA, "A");
-
-          ArrayList<String> codonsR = new ArrayList<String>();
-          codonsR.add("CGT");
-          codonsR.add("CGC");
-          codonsR.add("CGA");
-          codonsR.add("CGG");
-          codonsR.add("AGA");
-          codonsR.add("AGG");
-          SpecificAminoAcid aminoAcidR = new SpecificAminoAcid("Arginine", "Arg", codonsR, "R");
-
-          ArrayList<String> codonsN = new ArrayList<String>();
-          codonsN.add("AAT");
-          codonsN.add("AAC");
-          SpecificAminoAcid aminoAcidN = new SpecificAminoAcid("Asparagine", "Asn", codonsN, "N");
-
-          ArrayList<String> codonsD = new ArrayList<String>();
-          codonsD.add("GAT");
-          codonsD.add("GAC");
-          SpecificAminoAcid aminoAcidD = new SpecificAminoAcid("AsparticAcid", "Asp", codonsD, "D");
-
-          ArrayList<String> codonsC = new ArrayList<String>();
-          codonsC.add("TGT");
-          codonsC.add("TGC");
-          SpecificAminoAcid aminoAcidC = new SpecificAminoAcid("Cysteine", "Cys", codonsC, "C");
-
-          ArrayList<String> codonsQ = new ArrayList<String>();
-          codonsQ.add("CAA");
-          codonsQ.add("CAG");
-          SpecificAminoAcid aminoAcidQ = new SpecificAminoAcid("Glutamine", "Gln", codonsQ, "Q");
-
-          ArrayList<String> codonsE = new ArrayList<String>();
-          codonsE.add("GAA");
-          codonsE.add("GAG");
-          SpecificAminoAcid aminoAcidE = new SpecificAminoAcid("GlutamicAcid", "Glu", codonsE, "E");
-
-          ArrayList<String> codonsG = new ArrayList<String>();
-          codonsG.add("GGT");
-          codonsG.add("GGC");
-          codonsG.add("GGA");
-          codonsG.add("GGG");
-          SpecificAminoAcid aminoAcidG = new SpecificAminoAcid("Glycine", "Gly", codonsG, "G");
-
-          ArrayList<String> codonsH = new ArrayList<String>();
-          codonsH.add("CAT");
-          codonsH.add("CAC");
-          SpecificAminoAcid aminoAcidH = new SpecificAminoAcid("Histidine", "His", codonsH, "H");
-
-          ArrayList<String> codonsI = new ArrayList<String>();
-          codonsI.add("ATT");
-          codonsI.add("ATC");
-          codonsI.add("ATA");
-          SpecificAminoAcid aminoAcidI = new SpecificAminoAcid("Isoleucine", "Ile", codonsI, "I");
-
-          ArrayList<String> codonsL = new ArrayList<String>();
-          codonsL.add("TTA");
-          codonsL.add("TTG");
-          codonsL.add("CTT");
-          codonsL.add("CTC");
-          codonsL.add("CTA");
-          codonsL.add("CTG");
-          SpecificAminoAcid aminoAcidL = new SpecificAminoAcid("Leucine", "Leu", codonsL, "L");
-
-          ArrayList<String> codonsK = new ArrayList<String>();
-          codonsK.add("AAA");
-          codonsK.add("AAG");
-          SpecificAminoAcid aminoAcidK = new SpecificAminoAcid("Lysine", "Lys", codonsK, "K");
-
-          ArrayList<String> codonsM = new ArrayList<String>();
-          codonsM.add("ATG");
-          SpecificAminoAcid aminoAcidM = new SpecificAminoAcid("Methionine", "Met", codonsM, "M");
-
-          ArrayList<String> codonsF = new ArrayList<String>();
-          codonsF.add("TTT");
-          codonsF.add("TTC");
-          SpecificAminoAcid aminoAcidF = new SpecificAminoAcid("Phenylalanine", "Phe", codonsF, "F");
-
-          ArrayList<String> codonsP = new ArrayList<String>();
-          codonsP.add("CCT");
-          codonsP.add("CCC");
-          codonsP.add("CCA");
-          codonsP.add("CCG");
-          SpecificAminoAcid aminoAcidP = new SpecificAminoAcid("Proline", "Pro", codonsP, "P");
-
-          ArrayList<String> codonsS = new ArrayList<String>();
-          codonsS.add("TCT");
-          codonsS.add("TCC");
-          codonsS.add("TCA");
-          codonsS.add("TCG");
-          codonsS.add("AGT");
-          codonsS.add("AGC");
-          SpecificAminoAcid aminoAcidS = new SpecificAminoAcid("Serine", "Ser", codonsS, "S");
-
-          ArrayList<String> codonsT = new ArrayList<String>();
-          codonsT.add("ACT");
-          codonsT.add("ACC");
-          codonsT.add("ACA");
-          codonsT.add("ACG");
-          SpecificAminoAcid aminoAcidT = new SpecificAminoAcid("Threonine", "Thr", codonsT, "T");
-
-          ArrayList<String> codonsW = new ArrayList<String>();
-          codonsW.add("TGG");
-          SpecificAminoAcid aminoAcidW = new SpecificAminoAcid("Tryptophan", "Trp", codonsW, "W");
-
-          ArrayList<String> codonsY = new ArrayList<String>();
-          codonsY.add("TAT");
-          codonsY.add("TAC");
-          SpecificAminoAcid aminoAcidY = new SpecificAminoAcid("Tyrosine", "Tyr", codonsY, "Y");
-
-          ArrayList<String> codonsV = new ArrayList<String>();
-          codonsV.add("GTT");
-          codonsV.add("GTC");
-          codonsV.add("GTA");
-          codonsV.add("GTG");
-          SpecificAminoAcid aminoAcidV = new SpecificAminoAcid("Valine", "Val", codonsV, "V");
-
-          ArrayList<String> codonsStop = new ArrayList<String>();
-          codonsStop.add("TAG");
-          codonsStop.add("TGA");
-          codonsStop.add("TAA");
-          SpecificAminoAcid aminoAcidStop = new SpecificAminoAcid("Stop", "Ter", codonsStop, "*");
-      }
 
     /**
      * This method reads through any of the 3 reading frames
@@ -208,7 +88,6 @@ public class Main
      */
     public static void fileReader(String fileName) throws IOException
     {
-        initializeAminoAcids();
 
         int wholeRF = 1;
         int aminoAcid = 2;

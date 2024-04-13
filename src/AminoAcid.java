@@ -67,6 +67,16 @@ public class AminoAcid
         return "";
     }
 
+    /**
+     * I think we can use this method to analyze the files and return a formatted String with everything we need?
+     * @return
+     */
+    public String analyzeCodons()
+    {
+        String str = "";
+        return str;
+    }
+
     public boolean equals(AminoAcid aminoAcidTest)
     {
         return this.fullName == aminoAcidTest.fullName
