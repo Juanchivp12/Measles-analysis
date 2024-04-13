@@ -27,7 +27,7 @@ public class Main
         
         case RF3: fileReader("measlesSequenceRF3.csv"); break;
       }
-      System.out.println(buildAcidList());
+      buildAcidList();
     }
 
     /**
@@ -51,8 +51,9 @@ public class Main
 
             for (String s : tokens)
             {
-                acidList.add(s);
+                System.out.print(s + " ");
             }
+            System.out.println();
         }
         inFile.close();
 
