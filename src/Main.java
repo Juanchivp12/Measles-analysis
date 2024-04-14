@@ -29,28 +29,12 @@ public class Main
       switch (fileChoice)
       {
         case RF1:
-
-        // We dont need to print the lists but i just wanted to test them to see if they worked (they do)
-        for (String s : codonsArrayListRF1)
-        {
-            System.out.print(s + " ");
-        }
         break;
 
         case RF2:
-
-        for (String s : codonsArrayListRF2)
-        {
-            System.out.print(s + " ");
-        }
         break;
         
         case RF3:
-
-        for (String s : codonsArrayListRF3)
-        {
-            System.out.print(s + " ");
-        }
         break;
       }
     }
