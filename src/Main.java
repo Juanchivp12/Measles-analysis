@@ -29,14 +29,15 @@ public class Main
       switch (fileChoice)
       {
         case RF1:
-        
-        break;
-
+            lookForAcidFromList();
+            break;
         case RF2:
-        break;
+            lookForAcidFromList();
+            break;
         
         case RF3:
-        break;
+            lookForAcidFromList();
+            break;
       }
     }
 
