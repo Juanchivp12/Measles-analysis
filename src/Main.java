@@ -13,30 +13,45 @@ public class Main
       int fileChoice;
       Scanner kbd = new Scanner(System.in);
 
+      // This array list contains the contents of aminoAcidTable.csv
       ArrayList<AminoAcid> aminoAcidList = readFromAminoAcidTable("aminoAcidTable.csv");
+      ArrayList<String> codonsArrayListRF1 = readCodonsFromFile("measlesSequenceRF1.csv");
+      ArrayList<String> codonsArrayListRF2 = readCodonsFromFile("measlesSequenceRF2.csv");
+      ArrayList<String> codonsArrayListRF3 = readCodonsFromFile("measlesSequenceRF3.csv");
 
       do
       {
         System.out.print("Which RF file would you like to scan? (1, 2, 3) ");
         fileChoice = kbd.nextInt();
-      } while (fileChoice < RF1 || fileChoice > RF3);
+      } 
+      while (fileChoice < RF1 || fileChoice > RF3);
 
       switch (fileChoice)
       {
-        case RF1: fileReader("measlesSequenceRF1.csv"); break;
+        case RF1:
 
-        case RF2: fileReader("measlesSequenceRF2.csv"); break;
+        // We dont need to print the lists but i just wanted to test them to see if they worked (they do)
+        for (String s : codonsArrayListRF1)
+        {
+            System.out.print(s + " ");
+        }
+        break;
+
+        case RF2:
+
+        for (String s : codonsArrayListRF2)
+        {
+            System.out.print(s + " ");
+        }
+        break;
         
-        case RF3: fileReader("measlesSequenceRF3.csv"); break;
-      }
+        case RF3:
 
-      for (AminoAcid amino : aminoAcidList)
-      {
-        System.out.print(amino.getFullName() + " ");
-        System.out.print(amino.getThreeLetterAbbreviation() + " ");
-        System.out.print(amino.getOneLetterAbbreviation() + " ");
-        System.out.print(amino.getCodons() + " ");
-        System.out.println();
+        for (String s : codonsArrayListRF3)
+        {
+            System.out.print(s + " ");
+        }
+        break;
       }
     }
 
@@ -80,6 +95,33 @@ public class Main
         inFile.close();
 
         return acidList;
+    }
+
+    /**
+     * This method reads the codons from a file chosen by the user and adds each codon into an array list
+     * @param filename a String. file name chosen by user
+     * @return the array list of codons
+     * @throws IOException
+     */
+    public static ArrayList<String> readCodonsFromFile(String filename) throws IOException
+    {
+        ArrayList<String> codons = new ArrayList<String>();
+        File file = new File(filename);
+        Scanner inFile = new Scanner(file);
+
+        while (inFile.hasNext())
+        {
+            String str = inFile.nextLine();
+            String[] tokens = str.split(",");
+
+            for (String s : tokens)
+            {
+                codons.add(s);
+            }
+        }
+        inFile.close();
+
+        return codons;
     }
 
     /**
