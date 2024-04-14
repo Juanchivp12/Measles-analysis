@@ -56,7 +56,7 @@ public class AminoAcid
         return oneLetterAbbreviation;
     }
 
-    public static ArrayList<String> getCodons()
+    public ArrayList<String> getCodons()
     {
         return codons;
     }
@@ -89,6 +89,4 @@ public class AminoAcid
     {
         return new AminoAcid(fullName, threeLetterAbbreviation, oneLetterAbbreviation, codons);
     }
-
-
 }

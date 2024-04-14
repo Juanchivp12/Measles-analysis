@@ -14,7 +14,7 @@ public class Main
       Scanner kbd = new Scanner(System.in);
 
       // This array list contains the contents of aminoAcidTable.csv
-      ArrayList<AminoAcid> aminoAcidList = readFromAminoAcidTable("aminoAcidTable.csv");
+      ArrayList<AminoAcid> aminoAcidList = readFromAminoAcidTable();
       ArrayList<String> codonsArrayListRF1 = readCodonsFromFile("measlesSequenceRF1.csv");
       ArrayList<String> codonsArrayListRF2 = readCodonsFromFile("measlesSequenceRF2.csv");
       ArrayList<String> codonsArrayListRF3 = readCodonsFromFile("measlesSequenceRF3.csv");
@@ -29,6 +29,7 @@ public class Main
       switch (fileChoice)
       {
         case RF1:
+        
         break;
 
         case RF2:
@@ -44,9 +45,9 @@ public class Main
      * @return the array list of amino acids
      * @throws IOException
      */
-    public static ArrayList<AminoAcid> readFromAminoAcidTable(String filename) throws IOException
+    public static ArrayList<AminoAcid> readFromAminoAcidTable() throws IOException
     {
-        File file = new File(filename);
+        File file = new File("aminoAcidTable.csv");
         Scanner inFile = new Scanner(file);
 
         // Skip first line of the file
@@ -109,126 +110,26 @@ public class Main
     }
 
     /**
-     * This method reads through any of the 3 reading frames
-     * @param fileName a String representing a reading frame
+     * This method asks the user to enter a letter and prints out the amino acid that contains that letter
+     * @throws IOException
      */
-    public static void fileReader(String fileName) throws IOException
+    public static void lookForAcidFromList() throws IOException
     {
-
-        int wholeRF = 1;
-        int aminoAcid = 2;
+        ArrayList<AminoAcid> aminoAcidList = readFromAminoAcidTable();
         Scanner kbd = new Scanner(System.in);
 
-        File file = new File(fileName);
-        Scanner inFile = new Scanner(file);
+        System.out.print("Which Amino Acid would you like to see? (Enter its one letter abbreviation) ");
+        String aminoAcidLetter = kbd.nextLine().toUpperCase();
 
-        while (inFile.hasNext())
+        for (AminoAcid amino : aminoAcidList)
         {
-            String str = inFile.nextLine();
-            String[] tokens = str.split(",");
-
-            System.out.print("Want to see the whole RF (1) or only a specific amino acid (2)? ");
-            int choice = kbd.nextInt();
-            if (choice == wholeRF)
+            if (aminoAcidLetter.equals(amino.getOneLetterAbbreviation()))
             {
-                for (String s : tokens)
-                {
-                    System.out.print(s + " ");
-                }
-            }
-            else
-            {
-                System.out.println("What amino acid are you looking for? (Enter a letter) ");
-                String aminoChoice = kbd.next().toUpperCase();
-
-                switch (aminoChoice)
-                {
-                    case "A":
-                        System.out.println(AminoAcid.getCodons());
-                        break;
-
-                    case "R":
-
-                        break;
-
-                    case "N":
-
-                        break;
-
-                    case "D":
-
-                        break;
-
-                    case "C":
-
-                        break;
-
-                    case "Q":
-
-                        break;
-
-                    case "E":
-
-                        break;
-
-                    case "G":
-
-                        break;
-
-                    case "H":
-
-                        break;
-
-                    case "I":
-
-                        break;
-
-                    case "L":
-
-                        break;
-
-                    case "K":
-
-                        break;
-
-                    case "M":
-
-                        break;
-
-                    case "F":
-
-                        break;
-
-                    case "P":
-
-                        break;
-
-                    case "S":
-
-                        break;
-
-                    case "T":
-
-                        break;
-
-                    case "W":
-
-                        break;
-
-                    case "Y":
-
-                        break;
-
-                    case "V":
-
-                        break;
-
-                    case "*":
-
-                        break;
-                }
+                System.out.print(amino.getFullName() + " ");
+                System.out.print(amino.getOneLetterAbbreviation() + " ");
+                System.out.print(amino.getThreeLetterAbbreviation() + " ");
+                System.out.println(amino.getCodons());
             }
         }
-        inFile.close();
     }
   }

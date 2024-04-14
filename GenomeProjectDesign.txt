@@ -33,7 +33,7 @@ working on the bigger functionality.
 2.A Someone do the "ask the user for an amino acid" portion.
 - Write a lookup method. Accept a letter, find it in the amino acid array
 list from concurrent1, and then display the name, letter, and its codons from that
-line to the screen.
+line to the screen. ✅
 2.B Someone do the "print all amino acids" report.
 - Open a codon bias RF1 file to write to, loop through every amino acid in
 your amino acid arraylist, and print the name, letter, and its codons to the file.
