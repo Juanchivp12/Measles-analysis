@@ -19,6 +19,7 @@ public class Main
       ArrayList<String> codonsArrayListRF2 = readCodonsFromFile("measlesSequenceRF2.csv");
       ArrayList<String> codonsArrayListRF3 = readCodonsFromFile("measlesSequenceRF3.csv");
 
+      findATG(codonsArrayListRF1);
       printAllAminosToFile(aminoAcidList);
 
       findATG(codonsArrayListRF1);
