@@ -6,7 +6,7 @@ public class AminoAcid
     private String fullName = " ";
     private String threeLetterAbbreviation = " ";
     private String oneLetterAbbreviation = "";
-    private static ArrayList<String> codons = new ArrayList<String>();
+    private ArrayList<String> codons = new ArrayList<String>();
 
     // CONSTRUCTORS
     public AminoAcid() {}
@@ -64,7 +64,7 @@ public class AminoAcid
     // toString, equals, and clone methods
     public String toString()
     {
-        String str = "The Amino Acid is: " + fullName + " " + threeLetterAbbreviation + " " + oneLetterAbbreviation + " " + codons;
+        String str = "The codons for " + fullName + "(" + oneLetterAbbreviation + ", " + threeLetterAbbreviation + ")" + " are: " + String.join(" ", codons);
         return str;
     }
 

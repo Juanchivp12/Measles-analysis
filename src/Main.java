@@ -131,10 +131,7 @@ public class Main
         {
             if (aminoAcidLetter.equals(amino.getOneLetterAbbreviation()))
             {
-                System.out.print(amino.getFullName() + " ");
-                System.out.print(amino.getOneLetterAbbreviation() + " ");
-                System.out.print(amino.getThreeLetterAbbreviation() + " ");
-                System.out.println(amino.getCodons());
+                System.out.println(amino.toString());
             }
         }
     }
@@ -150,10 +147,7 @@ public class Main
 
         for (AminoAcid acids : aminoAcids)
         {
-            outfile.print(acids.getFullName() + " ");
-            outfile.print(acids.getThreeLetterAbbreviation() + " ");
-            outfile.print(acids.getOneLetterAbbreviation() + " ");
-            outfile.println(acids.getCodons());
+            outfile.println(acids.toString());
         }
         outfile.close();
     }
