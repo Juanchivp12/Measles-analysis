@@ -21,7 +21,7 @@ public class Main
 
       printAllAminosToFile(aminoAcidList);
 
-      System.out.println(findATG(codonsArrayListRF1));
+      findATG(codonsArrayListRF1);
 
       do
       {
@@ -162,15 +162,26 @@ public class Main
      * @param codons an arraylist
      * @return the number of codons from start codon
      */
-    public static int findATG(ArrayList<String> codons)
+    public static void findATG(ArrayList<String> codons)
     {
-        int codonsFromATG = 0;
+        int position = 0;
         boolean start = true;
+        String str = "ATG";
 
         for (String cod : codons)
         {
-            // Do something here
+            position++;
+            
+            if (cod.equals("ATG"))
+            {
+                System.out.println("Start codon found at position: " + position);
+            }
+            if (cod.equals("TAA") || cod.equals("TGA") || cod.equals("TAG"))
+            {
+                System.out.println("Stop codon found at position: " + position);
+            }
         }
-        return codonsFromATG;
+        // THIS METHOD IS NOT READY YET
+
     }
   }
