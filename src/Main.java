@@ -21,6 +21,8 @@ public class Main
 
       printAllAminosToFile(aminoAcidList);
 
+      System.out.println(findATG(codonsArrayListRF1));
+
       do
       {
         System.out.print("Which RF file would you like to scan? (1, 2, 3) ");
@@ -153,5 +155,22 @@ public class Main
             outfile.println(acids.getCodons());
         }
         outfile.close();
+    }
+
+    /**
+     * This method finds the ATGs and counts amino acids from it
+     * @param codons an arraylist
+     * @return the number of codons from start codon
+     */
+    public static int findATG(ArrayList<String> codons)
+    {
+        int codonsFromATG = 0;
+        boolean start = true;
+
+        for (String cod : codons)
+        {
+            // Do something here
+        }
+        return codonsFromATG;
     }
   }
