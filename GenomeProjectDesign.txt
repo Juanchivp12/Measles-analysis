@@ -38,7 +38,7 @@ line to the screen. ✅
 - Open a codon bias RF1 file to write to, loop through every amino acid in
 your amino acid arraylist, and print the name, letter, and its codons to the file.
 ***(Note that at the moment, neither 2.A or 2.B will display the codon percentages
-for those written codons. That's fine. We'll come back to that later.) ***
+for those written codons. That's fine. We'll come back to that later.) ***✅
 2.C Someone write code to loop through the array of codons from 1.B and find the
 ATGs.
 - Keep count of the codons you went through to find it. You'll need that

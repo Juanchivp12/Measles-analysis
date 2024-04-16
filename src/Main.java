@@ -19,6 +19,8 @@ public class Main
       ArrayList<String> codonsArrayListRF2 = readCodonsFromFile("measlesSequenceRF2.csv");
       ArrayList<String> codonsArrayListRF3 = readCodonsFromFile("measlesSequenceRF3.csv");
 
+      printAllAminosToFile(aminoAcidList);
+
       do
       {
         System.out.print("Which RF file would you like to scan? (1, 2, 3) ");
@@ -132,5 +134,24 @@ public class Main
                 System.out.println(amino.getCodons());
             }
         }
+    }
+
+    /**
+     * This method prints all the amino acids into an output file
+     * @param aminoAcids The array list of amino acids
+     * @throws IOException
+     */
+    public static void printAllAminosToFile(ArrayList<AminoAcid> aminoAcids) throws IOException
+    {
+        PrintWriter outfile = new PrintWriter("RFAminoAcidsOutput.txt");
+
+        for (AminoAcid acids : aminoAcids)
+        {
+            outfile.print(acids.getFullName() + " ");
+            outfile.print(acids.getThreeLetterAbbreviation() + " ");
+            outfile.print(acids.getOneLetterAbbreviation() + " ");
+            outfile.println(acids.getCodons());
+        }
+        outfile.close();
     }
   }

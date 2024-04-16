@@ -64,7 +64,8 @@ public class AminoAcid
     // toString, equals, and clone methods
     public String toString()
     {
-        return "";
+        String str = "The Amino Acid is: " + fullName + " " + threeLetterAbbreviation + " " + oneLetterAbbreviation + " " + codons;
+        return str;
     }
 
     /**
