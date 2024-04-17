@@ -178,4 +178,8 @@ public class Main
         // THIS METHOD IS NOT READY YET
 
     }
+      public void countCodons(AminoAcid aminoAcid)
+      {
+
+      }
   }
