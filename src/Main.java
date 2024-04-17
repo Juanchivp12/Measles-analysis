@@ -22,6 +22,9 @@ public class Main
       findATG(codonsArrayListRF1);
       printAllAminosToFile(aminoAcidList);
 
+      AminoAcid aminoAcid = aminoAcidList.get(0);
+      countCodons(aminoAcid);
+
       findATG(codonsArrayListRF1);
 
       do
@@ -178,8 +181,12 @@ public class Main
         // THIS METHOD IS NOT READY YET
 
     }
-      public void countCodons(AminoAcid aminoAcid)
+      public static void countCodons(AminoAcid aminoAcid)
       {
-
+          int count = 0;
+          if (aminoAcid.getAbbreviation().equals(aminoAcid.getAbbreviation()))
+          {
+              System.out.println("Found!");
+          }
       }
   }
