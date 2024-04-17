@@ -17,27 +17,6 @@ public class Gene
         this.geneLength = geneLength;
     }
 
-    // SETTERS
-    public void setAminoAcidSequence(String aminoAcidSequence)
-    {
-        this.aminoAcidSequence = aminoAcidSequence;
-    }
-
-    public void setStartPosition(int startPosition)
-    {
-        this.startPosition = startPosition;
-    }
-
-    public void setEndPosition(int endPosition)
-    {
-        this.endPosition = endPosition;
-    }
-
-    public void setGeneLength(int geneLength)
-    {
-        this.geneLength = geneLength;
-    }
-
     // GETTERS
     public String getAminoAcidSequence()
     {
