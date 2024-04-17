@@ -1,21 +1,21 @@
-The codons for Alanine(A, Ala) are: GCT GCC GCA GCG
-The codons for Arginine(R, Arg) are: CGT CGC CGA CGG AGA AGG
-The codons for Asparagine(N, Asn) are: AAT AAC
-The codons for AsparticAcid(D, Asp) are: GAT GAC
-The codons for Cysteine(C, Cys) are: TGT TGC
-The codons for Glutamine(Q, Gln) are: CAA CAG
-The codons for GlutamicAcid(E, Glu) are: GAA GAG
-The codons for Glycine(G, Gly) are: GGT GGC GGA GGG
-The codons for Histidine(H, His) are: CAT CAC
-The codons for Isoleucine(I, Ile) are: ATT ATC ATA
-The codons for Leucine(L, Leu) are: TTA TTG CTT CTC CTA CTG
-The codons for Lysine(K, Lys) are: AAA AAG
-The codons for Methionine(M, Met) are: ATG
-The codons for Phenylalanine(F, Phe) are: TTT TTC
-The codons for Proline(P, Pro) are: CCT CCC CCA CCG
-The codons for Serine(S, Ser) are: TCT TCC TCA TCG AGT AGC
-The codons for Threonine(T, Thr) are: ACT ACC ACA ACG
-The codons for Tryptophan(W, Trp) are: TGG
-The codons for Tyrosine(Y, Tyr) are: TAT TAC
-The codons for Valine(V, Val) are: GTT GTC GTA GTG
-The codons for Stop(*, Ter) are: TAG TGA TAA
+The codons for Alanine(A) are: GCT GCC GCA GCG
+The codons for Arginine(R) are: CGT CGC CGA CGG AGA AGG
+The codons for Asparagine(N) are: AAT AAC
+The codons for AsparticAcid(D) are: GAT GAC
+The codons for Cysteine(C) are: TGT TGC
+The codons for Glutamine(Q) are: CAA CAG
+The codons for GlutamicAcid(E) are: GAA GAG
+The codons for Glycine(G) are: GGT GGC GGA GGG
+The codons for Histidine(H) are: CAT CAC
+The codons for Isoleucine(I) are: ATT ATC ATA
+The codons for Leucine(L) are: TTA TTG CTT CTC CTA CTG
+The codons for Lysine(K) are: AAA AAG
+The codons for Methionine(M) are: ATG
+The codons for Phenylalanine(F) are: TTT TTC
+The codons for Proline(P) are: CCT CCC CCA CCG
+The codons for Serine(S) are: TCT TCC TCA TCG AGT AGC
+The codons for Threonine(T) are: ACT ACC ACA ACG
+The codons for Tryptophan(W) are: TGG
+The codons for Tyrosine(Y) are: TAT TAC
+The codons for Valine(V) are: GTT GTC GTA GTG
+The codons for Stop(*) are: TAG TGA TAA

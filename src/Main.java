@@ -69,8 +69,7 @@ public class Main
 
             // Assign variables the values of tokens at specific positions
             String name = tokens[0];
-            String threeLetter = tokens[1];
-            String oneLetter = tokens[2];
+            String abbreviation = tokens[2];
 
             // Make array list for codons and read them from file and add them to it
             ArrayList<String> codons = new ArrayList<String>();
@@ -80,7 +79,7 @@ public class Main
             }
 
             // Make an instance of the AminoAcid class and add information from aminoAcidTable file
-            AminoAcid acid = new AminoAcid(name, threeLetter, oneLetter, codons);
+            AminoAcid acid = new AminoAcid(name, abbreviation, codons);
             acidList.add(acid);
         }
         inFile.close();
@@ -129,7 +128,7 @@ public class Main
 
         for (AminoAcid amino : aminoAcidList)
         {
-            if (aminoAcidLetter.equals(amino.getOneLetterAbbreviation()))
+            if (aminoAcidLetter.equals(amino.getAbbreviation()))
             {
                 System.out.println(amino.toString());
             }

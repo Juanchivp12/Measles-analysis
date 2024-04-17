@@ -4,39 +4,16 @@ public class AminoAcid
 {
     // ATTRIBUTES
     private String fullName = " ";
-    private String threeLetterAbbreviation = " ";
-    private String oneLetterAbbreviation = "";
+    private String abbreviation = "";
     private ArrayList<String> codons = new ArrayList<String>();
 
     // CONSTRUCTORS
     public AminoAcid() {}
 
-    public AminoAcid(String fullName, String threeLetterAbbreviation, String oneLetterAbbreviation, ArrayList<String> codons)
+    public AminoAcid(String fullName, String abbreviation, ArrayList<String> codons)
     {
         this.fullName = fullName;
-        this.threeLetterAbbreviation = threeLetterAbbreviation;
-        this.oneLetterAbbreviation = oneLetterAbbreviation;
-        this.codons = codons;
-    }
-
-    // SETTERS
-    public void setFullName(String fullName)
-    {
-        this.fullName = fullName;
-    }
-
-    public void setThreeLetterAbbreviation(String threeLetterAbbreviation)
-    {
-        this.threeLetterAbbreviation = threeLetterAbbreviation;
-    }
-
-    public void setOneLetterAbbreviation(String threeLetterAbbreviation)
-    {
-        this.oneLetterAbbreviation = oneLetterAbbreviation;
-    }
-
-    public void setCodons(ArrayList<String> codons)
-    {
+        this.abbreviation = abbreviation;
         this.codons = codons;
     }
 
@@ -46,14 +23,9 @@ public class AminoAcid
         return fullName;
     }
 
-    public String getThreeLetterAbbreviation()
+    public String getAbbreviation()
     {
-        return threeLetterAbbreviation;
-    }
-
-    public String getOneLetterAbbreviation()
-    {
-        return oneLetterAbbreviation;
+        return abbreviation;
     }
 
     public ArrayList<String> getCodons()
@@ -64,7 +36,7 @@ public class AminoAcid
     // toString, equals, and clone methods
     public String toString()
     {
-        String str = "The codons for " + fullName + "(" + oneLetterAbbreviation + ", " + threeLetterAbbreviation + ")" + " are: " + String.join(" ", codons);
+        String str = "The codons for " + fullName + "(" + abbreviation + ")" + " are: " + String.join(" ", codons);
         return str;
     }
 
@@ -81,13 +53,12 @@ public class AminoAcid
     public boolean equals(AminoAcid aminoAcidTest)
     {
         return this.fullName == aminoAcidTest.fullName
-                && this.threeLetterAbbreviation == aminoAcidTest.threeLetterAbbreviation
-                && this.oneLetterAbbreviation == aminoAcidTest.oneLetterAbbreviation
+                && this.abbreviation == aminoAcidTest.abbreviation
                 && this.codons == aminoAcidTest.codons;
     }
 
     public AminoAcid clone()
     {
-        return new AminoAcid(fullName, threeLetterAbbreviation, oneLetterAbbreviation, codons);
+        return new AminoAcid(fullName, abbreviation, codons);
     }
 }
