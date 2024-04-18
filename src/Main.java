@@ -82,8 +82,7 @@ public class Main
             }
 
             // Make an instance of the AminoAcid class and add information from aminoAcidTable file
-            AminoAcid acid = new AminoAcid(name, abbreviation, codons);
-            acidList.add(acid);
+            acidList.add(new AminoAcid(name, abbreviation, codons));
         }
         inFile.close();
 
