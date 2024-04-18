@@ -187,6 +187,7 @@ public class Main
           if (aminoAcid.getAbbreviation().equals(aminoAcid.getAbbreviation()))
           {
               System.out.println("Found!");
+              count++;
           }
       }
   }
